@@ -2,7 +2,6 @@ import React from "react";
 import Button from "@mui/material/Button";
 import { Divider, TextField } from "@mui/material";
 
-
 const HomePage = () => {
   return (
     <>
@@ -20,7 +19,7 @@ const HomePage = () => {
           <TextField id="filled-basic" label="Enter a Task" variant="filled" />
           <Button variant="contained">Add</Button>
         </div>
-        <Divider style={{marginTop:'50px'}}/>
+        <Divider style={{ marginTop: "50px" }} />
       </div>
     </>
   );
