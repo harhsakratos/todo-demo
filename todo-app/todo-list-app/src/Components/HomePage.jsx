@@ -1,12 +1,13 @@
 import React from "react";
-import { Input, Button, Space, Divider, Table } from "antd";
-import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
+import { Input, Button, Space, Divider } from "antd";
 import TodoList from "./TodoList";
 
 const HomePage = () => {
   return (
     <div>
-      <h1 style={{ textAlign: "center" }}>Your To-Do List</h1>
+      <h1 style={{ textAlign: "center", textDecoration: "underline" }}>
+        Your To-Do List
+      </h1>
       <Space.Compact
         style={{
           width: "45%",
