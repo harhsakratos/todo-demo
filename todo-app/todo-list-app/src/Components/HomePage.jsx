@@ -5,7 +5,9 @@ import TodoList from "./TodoList";
 const HomePage = () => {
   return (
     <div>
-      <h1 style={{ textAlign: "center" }}>Your To-Do List</h1>
+      <h1 style={{ textAlign: "center", textDecoration: "underline" }}>
+        Your To-Do List
+      </h1>
       <Space.Compact
         style={{
           width: "45%",
