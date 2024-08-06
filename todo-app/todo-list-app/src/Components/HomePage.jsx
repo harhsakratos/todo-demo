@@ -1,6 +1,7 @@
 import React from "react";
-import { Input, Button, Space, Divider } from "antd";
+import { Divider } from "antd";
 import TodoList from "./TodoList";
+import FormComponent from "./FormComponent";
 
 const HomePage = () => {
   return (
@@ -8,15 +9,9 @@ const HomePage = () => {
       <h1 style={{ textAlign: "center", textDecoration: "underline" }}>
         Your To-Do List
       </h1>
-      <Space.Compact
-        style={{
-          width: "45%",
-          marginLeft: "20%",
-        }}
-      >
-        <Input placeholder="Add a Task" />
-        <Button type="primary">Add</Button>
-      </Space.Compact>
+      <div>
+        <FormComponent />
+      </div>
       <Divider />
       <TodoList />
     </div>

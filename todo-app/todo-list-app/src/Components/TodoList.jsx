@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Space, Table } from "antd";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
+import FormComponent from "./FormComponent";
 
 const TodoList = () => {
   const columns = [
@@ -25,6 +26,11 @@ const TodoList = () => {
       dataIndex: "status",
     },
     {
+      title: "Priority",
+      key: "priority",
+      dataIndex: "priority",
+    },
+    {
       title: "Action",
       key: "action",
       render: () => (
@@ -42,12 +48,14 @@ const TodoList = () => {
       dateCreated: String(new Date().toLocaleString().toLocaleUpperCase()),
       dateUpdated: String(new Date().toLocaleString().toUpperCase()),
       status: "Not Done",
+      priority: "Three (3)",
     },
   ];
 
   return (
     <div>
       <Table columns={columns} dataSource={TableData} />
+      
     </div>
   );
 };
