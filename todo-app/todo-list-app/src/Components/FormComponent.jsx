@@ -1,14 +1,26 @@
 import React from "react";
-import { Button, Form, Input, Select, Space } from "antd";
+import { Button, Form, Input, Select } from "antd";
+import { useStateValue } from "../store/StateContext";
+import { Actions } from "../store/actions";
 
 const FormComponent = () => {
+  const { state, dispatch } = useStateValue();
   const [form] = Form.useForm();
   const onReset = () => {
     form.resetFields();
   };
+
+  const onFinish = (values) => {
+    console.log(values);
+    values["dateCreated"] = new Date().toLocaleString();
+    values["dateUpdated"] = new Date().toLocaleString();
+    dispatch(Actions.addTask(values));
+  };
+
   return (
     <Form
       form={form}
+      onFinish={onFinish}
       name="control-hooks"
       variant="filled"
       style={{
@@ -33,7 +45,7 @@ const FormComponent = () => {
 
       <Form.Item
         label="Status"
-        name="Status"
+        name="status"
         rules={[
           {
             required: true,
@@ -85,31 +97,37 @@ const FormComponent = () => {
           ]}
         />
       </Form.Item>
-
-      <Form.Item
-        wrapperCol={{
-          offset: 6,
-          span: 16,
-        }}
-      >
-        <Space>
+      <div style={{ display: "flex" }}>
+        <Form.Item
+          wrapperCol={{
+            offset: 6,
+            span: 16,
+          }}
+        >
           <Button
             type="primary"
             htmlType="submit"
-            style={{ width: "100px", marginLeft: "20px" }}
+            style={{ width: "100px", marginLeft: "30px" }}
           >
             Add
           </Button>
+        </Form.Item>
 
+        <Form.Item
+          wrapperCol={{
+            offset: 6,
+            span: 16,
+          }}
+        >
           <Button
             htmlType="button"
             onClick={onReset}
-            style={{ width: "100px", marginLeft: "10px" }}
+            style={{ width: "100px", marginLeft: "30px" }}
           >
             Reset
           </Button>
-        </Space>
-      </Form.Item>
+        </Form.Item>
+      </div>
     </Form>
   );
 };

@@ -1,9 +1,11 @@
 import React from "react";
 import { Button, Space, Table } from "antd";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
-import FormComponent from "./FormComponent";
+import { useStateValue } from "../store/StateContext";
 
 const TodoList = () => {
+  const { state, dispatch } = useStateValue();
+
   const columns = [
     {
       title: "Task Name",
@@ -42,20 +44,11 @@ const TodoList = () => {
     },
   ];
 
-  const TableData = [
-    {
-      taskName: "Go to Gym 5:00 AM",
-      dateCreated: String(new Date().toLocaleString().toLocaleUpperCase()),
-      dateUpdated: String(new Date().toLocaleString().toUpperCase()),
-      status: "Not Done",
-      priority: "Three (3)",
-    },
-  ];
+  const TableData = [...state];
 
   return (
     <div>
       <Table columns={columns} dataSource={TableData} />
-      
     </div>
   );
 };

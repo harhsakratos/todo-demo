@@ -1,12 +1,15 @@
-import React from 'react'
-import HomePage from './Components/HomePage'
+import React from "react";
+import HomePage from "./Components/HomePage";
+import { StateProvider } from "./store/StateContext";
 
 const App = () => {
   return (
     <div>
-      <HomePage/>
+      <StateProvider>
+        <HomePage />
+      </StateProvider>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
