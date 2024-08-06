@@ -1,6 +1,5 @@
 import React from "react";
-import { Input, Button, Space, Divider, Table } from "antd";
-import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
+import { Input, Button, Space, Divider } from "antd";
 import TodoList from "./TodoList";
 
 const HomePage = () => {

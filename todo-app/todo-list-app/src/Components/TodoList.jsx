@@ -36,7 +36,7 @@ const TodoList = () => {
     },
   ];
 
-  const data = [
+  const TableData = [
     {
       taskName: "Go to Gym 5:00 AM",
       dateCreated: String(new Date().toLocaleString().toLocaleUpperCase()),
@@ -47,7 +47,7 @@ const TodoList = () => {
 
   return (
     <div>
-      <Table columns={columns} dataSource={data} />
+      <Table columns={columns} dataSource={TableData} />
     </div>
   );
 };
