@@ -11,9 +11,6 @@ const FormComponent = () => {
   };
 
   const onFinish = (values) => {
-    console.log(values);
-    values["dateCreated"] = new Date().toLocaleString();
-    values["dateUpdated"] = new Date().toLocaleString();
     dispatch(Actions.addTask(values));
   };
 
